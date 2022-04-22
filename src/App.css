@@ -47,9 +47,6 @@
 .pokemon-name{
 	text-transform: capitalize;
 }
-.dex-container{
-
-}
 .search{
 	margin: auto;
   	display: block;
@@ -59,6 +56,13 @@
 	border: 1px solid black;
 	border-radius: 10px;
 }
-#title-teambuilder{
+.title-teambuilder{
+	text-align: center;
+}
+.add-remove-button{
+	margin-bottom: 1em;
+}
+.text-editor{
+	margin-bottom: 2em;
 	text-align: center;
 }

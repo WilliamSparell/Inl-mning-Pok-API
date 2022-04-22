@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Pokedex = (props) => {
+const Pokedex = ({addTeamMember}) => {
   	const [pokemons, setPokemons] = useState([]);
 	const [searchedPokemons, setSearchedPokemons] = useState("");
 
@@ -29,6 +29,9 @@ const Pokedex = (props) => {
 	const handleChange = (event) => {
 		setSearchedPokemons(event.target.value)
 	}
+	const handleAddToTeam = () =>{
+		
+	}
 
 	const idOf = (url) => {
         let trimmed = url.split('/')
@@ -45,16 +48,22 @@ const Pokedex = (props) => {
     		/>
 			<div className="grid-container">
 				{filteredPokemons.map(({ name, url }) => (
-					<div key={url} className="pokemon-container">
+					<div key={url} 								className="pokemon-container">
 						<img className="Icon"
 						src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${idOf(url)}.png`}
 						/>
 						<h3 className="pokemon-name">{name}</h3>
+						<button 
+						className="add-remove-button"
+						type='button'
+						onClick={() => addTeamMember({ name, url })}>
+						Add to team</button>
 					</div>
 				))}
 			</div>
 		</div>
   );
 };
+
 
 export default Pokedex
