@@ -3,7 +3,7 @@ import { useState } from 'react'
 const TeamBuilder = ({removeTeamMember, teamMembers}) => {
 	const [isEditingName, setIsEditingName] = useState(true)
 	const [newName, setNewName] = useState('')
-
+	// console.log(newName.name)
 	const idOf = (url) => {
         let trimmed = url.split('/')
         return trimmed[trimmed.length - 2]
