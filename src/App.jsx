@@ -12,12 +12,12 @@ function App() {
     const id = uuid()
 
     const addTeamMember = (newTeamMember) => {
-        let obj = { ...newTeamMember, nickname: newTeamMember.name, id }
+        const promptNickname = window.prompt("Select a Nickname");
+        let obj = { ...newTeamMember, nickname: promptNickname, id }
         setTeamMembers([...teamMembers, obj])
     }
     const removeTeamMember = (removedTeamMember) => {
         const filteredTeamMembers = teamMembers.filter(f => f.id != removedTeamMember.id )
-        console.log(filteredTeamMembers)
         setTeamMembers(filteredTeamMembers)
     }
 

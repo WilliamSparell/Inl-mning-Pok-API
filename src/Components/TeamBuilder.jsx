@@ -1,17 +1,11 @@
 import { useState } from 'react'
 
 const TeamBuilder = ({removeTeamMember, teamMembers}) => {
-	const [isEditingName, setIsEditingName] = useState(true)
-	const [newName, setNewName] = useState('')
-	// console.log(newName.name)
+
 	const idOf = (url) => {
         let trimmed = url.split('/')
         return trimmed[trimmed.length - 2]
     }
-
-	const changeName = () => {
-			setIsEditingName(false)
-	}
 	
 	return(
 		<div className="dex-container">
@@ -24,31 +18,10 @@ const TeamBuilder = ({removeTeamMember, teamMembers}) => {
 						src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${idOf(url)}.png`}
 						/>
 						
-						{isEditingName ? (
-							<h3 
-							className="pokemon-name"
-							onClick={changeName}
-							>
-							{nickname}</h3>
-						) : (
-							<input
-							className='text-editor' 
-							type="text"
-							defaultValue={name}
-							onChange={(event) => {
-								setNewName(event.target.value)
-							}}
-							onKeyDown={(event) => {
-								if (event.key === 'Enter' || event.key === 'Escape') {
-								  	
-								setIsEditingName(true)
-								  	event.preventDefault()
-									event.stopPropagation()
-								}
-							}}
-							 />
-							
-						)}
+						<h3>Name: {name}</h3>
+
+						<h3>Nickname: {nickname}</h3>
+
 						<button 
 						className="add-remove-button"
 						type='button'

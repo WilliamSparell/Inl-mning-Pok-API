@@ -29,9 +29,6 @@ const Pokedex = ({addTeamMember}) => {
 	const handleChange = (event) => {
 		setSearchedPokemons(event.target.value)
 	}
-	const handleAddToTeam = () =>{
-		
-	}
 
 	const idOf = (url) => {
         let trimmed = url.split('/')
@@ -56,7 +53,9 @@ const Pokedex = ({addTeamMember}) => {
 						<button 
 						className="add-remove-button"
 						type='button'
-						onClick={() => addTeamMember({ name, url })}>
+						onClick={() => {
+							addTeamMember({ name, url })
+							}}>
 						Add to team</button>
 					</div>
 				))}
